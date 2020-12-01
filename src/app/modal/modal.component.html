@@ -1,0 +1,70 @@
+<!-- Modal -->
+<div id="ventana" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Actualizar Libro</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <form class="form-book" #formBook="ngForm" (ngSubmit)="onSaveBook(formBook)">
+              <div class="form-group">
+                <input type="hidden" id="id" name="id" class="form-control" 
+                 [(ngModel)]="this.listServ.selectedBook.id">
+
+                  <label for="">Nombre</label>
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Nombre"
+                  [(ngModel)]="this.listServ.selectedBook.name">
+              </div> 
+
+                <div >
+                  <label for="">Tipo</label>
+                  <input type="text" id="tipo" name="tipo" class="form-control" placeholder="Tipo"
+                  [(ngModel)]="this.listServ.selectedBook.tipo">
+
+                </div> 
+                  
+                <div class="form-group">
+                  <label for="">Marca</label>
+                  <input type="text" id="mark" name="mark" class="form-control" placeholder="Marca"
+                  [(ngModel)]="this.listServ.selectedBook.mark">
+                </div>
+
+                <div class="form-group">
+                  <label for="">Cantidad</label>
+                  <input type="text" id="quantity" name="quantity" class="form-control" placeholder="Cantidad"
+                  [(ngModel)]="this.listServ.selectedBook.quantity">
+                </div>
+
+                <div class="form-group">
+                  <label for="">Precio</label>
+                  <input type="text" id="price" name="price" class="form-control" placeholder="Precio"
+                  [(ngModel)]="this.listServ.selectedBook.price">
+                </div>
+
+                <div class="form-group">
+                  <label for="">Año</label>
+                  <input type="text" id="year" name="year" class="form-control" placeholder="Año"
+                  [(ngModel)]="this.listServ.selectedBook.mark">
+                </div>
+
+                
+                <div class="form-group">
+                  <label for="">Marca</label>
+                  <input type="text" id="mark" name="mark" class="form-control" placeholder="Marca"
+                  [(ngModel)]="this.listServ.selectedBook.mark">
+                </div>
+
+                <div class="form-group">
+                  <input #file type="file" [(ngModel)]="this.listServ.selectedBook.image" accept='image/*' (change)="preview(file.files)" />
+                  <img [src]="imgURL" height="200" *ngIf="imgURL">
+                </div>
+            <button type="submit" class="btn btn-primary float-right">Actualizar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
